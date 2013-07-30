@@ -21,4 +21,21 @@
     }
 }
 
+- (NSUInteger)expYearLast2;
+{
+    if (!expYear) return 0;
+
+    NSString *expString = [NSString stringWithFormat:@"%u", expYear];
+    
+    if (expString.length == 2) {
+        return expYear;
+    } else if (expString.length == 4) {
+        return expYear % 100;
+    } else {
+        return 0;
+    }
+}
+
+
+
 @end
